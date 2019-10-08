@@ -74,7 +74,7 @@ class LArCVServerWorker( WorkerService ):
             idx = indices[itry]
             data = None
             self.io.read_entry(idx)
-            data = self.load_func(self.io)
+            data = self.load_func(self.io,**self.func_params)
             if data is not None:
                 batch.append( data )
             else:
